@@ -66,13 +66,13 @@ pipeline{
         sh "echo 'Building Docker Image'"
        }
     }
-stage('8Deploying image to Kubernetes') {
-      steps {
-        script {
-        kubernetesDeploy (configs: 'deployment.yaml', kubeconfigId: 'Kubernetes')
-        }
-      }
-    }
+// stage('8Deploying image to Kubernetes') {
+//       steps {
+//         script {
+//         kubernetesDeploy (configs: 'deployment.yaml', kubeconfigId: 'Kubernetes')
+//         }
+//       }
+//     }
 
   }
 }
