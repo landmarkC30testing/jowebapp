@@ -12,11 +12,12 @@
 </head>
 </head>
 <body>
-<h1 align="center" >Welcome to Joseph's DevOP Project </h1>
+<h1 align="center" >Welcome to Joseph's DevOPs Project </h1>
 <h1 align="center"> Joetech CI/CD Project  </h1>
 	
 	<h1 align="center" style="color:red" >I have sucessfully used Jenkins to integrate Maven,Sonarqube,Nexus,Tomcat & Docker </h1>
-	
+	<h1 align="center" style="color:red" >This Project uses Argo CD as a GitOps Tool </h1>
+		
  <div style="text-align: center;"><img src="images/jenkins.png" width="850" alt="My Image"  /></div> 
 	<!--	<span align: "center"><img src="images/jenkins.png" width="850" alt="My Image"  /></span> -->
 	
@@ -79,6 +80,10 @@
 		<div class="column">
     <img src="images/terraform.png" alt="terraform" style="width:100%">
   </div>
+</div>
+<div class="column">
+<img src="images/argoCD.png" alt="argoCD" style="width:100%">
+</div>
 </span>
 </body>	
 
