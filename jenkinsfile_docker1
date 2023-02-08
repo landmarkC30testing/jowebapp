@@ -11,7 +11,7 @@
 
 pipeline{
   environment {
-    registry = "jeaggrey/webapp"
+    registry = "jeaggrey/joetech"
     registryCredential = 'DockerHubCred' //Credential name in Jenkins for Dockerhub
     dockerImage = ''
   }
@@ -23,7 +23,7 @@ pipeline{
     stage('1GetCode'){
       steps{
         sh "echo 'cloning the latest application version' "
-       git credentialsId: 'GithubCred', url: 'https://github.com/jeaggrey/maven-web-application' //Use your own github account 
+       git credentialsId: 'GithubCred', url: 'https://github.com/JoetechDev/jowebapp.git' //Use your own github account 
       }
     }
     stage('3Test+Build'){
