@@ -66,13 +66,14 @@ pipeline{
         sh "echo 'Building Docker Image'"
        }
     }
-// stage('8Deploying image to Kubernetes') {
-//       steps {
-//         script {
-//         kubernetesDeploy (configs: 'deployment.yaml', kubeconfigId: 'Kubernetes')
-//         }
-//       }
-//     }
+ stage('8Updating Manifest') {
+       steps {
+         script {
+         echo "triggering updatemanifestjob"
+                build job: 'manifestupd', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
+         }
+       }
+     }
 
   }
 }
