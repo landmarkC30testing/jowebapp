@@ -11,7 +11,7 @@
 
 pipeline{
   environment {
-    registry = "jeaggrey/joetech"
+    registry = "jeaggrey/joetech" //Replace with your registry 
     registryCredential = 'DockerHubCred' //Credential name in Jenkins for Dockerhub
     dockerImage = ''
   }
@@ -23,7 +23,7 @@ pipeline{
     stage('1GetCode'){
       steps{
         sh "echo 'cloning the latest application version' "
-       git credentialsId: 'GithubCred', url: 'https://github.com/JoetechDev/jowebapp.git' //Use your own github account 
+       git credentialsId: 'GithubCred', url: 'https://github.com/JoetechDev/jowebapp.git' //Use your own github account link
       }
     }
     stage('3Test+Build'){
@@ -35,7 +35,7 @@ pipeline{
     }
 //   stage('4CodeQuality'){
 //        steps{
-//          sh "echo 'Perfoming CodeQualityAnalysis' "
+//          sh "echo 'Perfoming CodeQualityAnalysis' "   //currently commented out
 //          sh "mvn sonar:sonar"
 //        }
 //     }
@@ -49,7 +49,8 @@ pipeline{
       steps{
 
       script {
-        dockerImage = docker.build registry + ":$BUILD_NUMBER" //use build number as image tag
+        dockerImage = docker.build registry + ":$BUILD_NUMBER" //use build number as image tag 
+        //$BUILD_NUMBER variable is used as tag for docker image 
       }   
       sh "echo 'Building Docker Image' "
        
@@ -63,14 +64,15 @@ pipeline{
         dockerImage.push()
        }  
       }  
-        sh "echo 'Building Docker Image'"
+        sh "echo 'Pushed  Docker Image'"
        }
     }
  stage('8Updating Manifest') {
        steps {
          script {
          echo "triggering updatemanifestjob"
-                build job: 'manifestupd', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
+                build job: 'manifestupd', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)] 
+                // "manifestupd" name of second jenkins job that is triggered , second Job is parameterized and env.BUILD_NUMBER is inputed as parameter  DOCKERTAG  
          }
        }
      }
