@@ -1,4 +1,5 @@
-Prequisites
+
+**PREREQUISITE**
 A server with Jenkins and Docker running on it (Jenkins user should be allowed to run Docker).
 Github account.
 Docker hub account.
