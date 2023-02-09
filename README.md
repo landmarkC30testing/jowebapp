@@ -19,3 +19,6 @@ Using ArgosCD for deployment job
 Install ArgoCD cli
 Install ArgoCD ON k8s cluster 
 Create NodePort to access ArgoCD ** Ingress is preferential but not currently working on this build **
+
+<br>**OWNER**<br />
+JOSEPH AGGREY 
