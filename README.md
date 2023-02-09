@@ -6,15 +6,15 @@ Docker hub account.
 Install the Docker Pipelines plugin on Jenkins
 Install/Download kubernetets plugin (Only Required if passing K8s .kube/config)
 
-K8S
+**K8S**
 Create Deployment and other related files for image 
 
-Jenkins 
+**JENKINS**
 Docker Hub account details. Go to Credentials → Global → Add credentials  
 Note that if you set the ID, you will need this specific ID to refer this credential from your scripts. Here we are just using dockerhub_id.
 Create Pipelines for CI jobs 
 
-ArgoCD
+**ArgoCD**
 Using ArgosCD for deployment job 
 Install ArgoCD cli
 Install ArgoCD ON k8s cluster 
