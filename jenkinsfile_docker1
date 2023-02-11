@@ -23,7 +23,7 @@ pipeline{
     stage('1GetCode'){
       steps{
         sh "echo 'cloning the latest application version' "
-       git credentialsId: 'GithubCred', url: 'https://github.com/JoetechDev/jowebapp' //Use your own github account link
+       git credentialsId: 'GithubCred', url: 'https://github.com/JoetechDev/jowebapp.git' //Use your own github account link
     //  git 'https://github.com/JoetechDev/jowebapp'
       }
     }
