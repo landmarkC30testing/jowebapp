@@ -14,7 +14,7 @@
 <body>
 <h1 align="center" >Welcome to Joseph's DevOPs Project </h1>
 <h1 align="center"> Joetech CI/CD Project  </h1>
-	<h1 align="center" style="color:red" >I have sucessfully used Jenkins to integrate Maven,Sonarqube,Nexus,Tomcat & Docker </h1>
+	<h1 align="center" style="color:red" >I have sucessfully used Jenkins to integrate Maven,Sonarqube,Nexus,Tomcat , Docker & K8s </h1>
 	<h1 align="center" style="color:red" >This Project uses ArgoCD as a GitOps Tool </h1>
 		
  <div style="text-align: center;"><img src="images/jenkins.png" width="850" alt="My Image"  /></div> 
