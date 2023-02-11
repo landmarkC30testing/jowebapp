@@ -17,7 +17,7 @@ pipeline{
   }
   agent any 
   tools {
-    maven "maven3.9.0" //Pick Maven Version
+    maven "maven3.8.6" //Pick Maven Version
   }  
   stages {
     stage('1GetCode'){
