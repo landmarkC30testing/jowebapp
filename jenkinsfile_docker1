@@ -23,14 +23,14 @@ pipeline{
     stage('1GetCode'){
       steps{
         sh "echo 'cloning the latest application version' "
-       git credentialsId: 'GithubCred', url: 'https://github.com/JoetechDev/jowebapp.git' //Use your own github account link
+       git credentialsId: 'GithubCred', url: 'https://github.com/JoetechDev/jowebapp' //Use your own github account link
       }
     }
     stage('3Test+Build'){
       steps{
         sh "echo 'running JUnit-test-cases' "
         sh "echo 'testing must passed to create artifacts ' "
-        sh "mvn clean package"
+        sh 'mvn clean package'
       }
     }
 //   stage('4CodeQuality'){
