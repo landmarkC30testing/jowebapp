@@ -11,7 +11,7 @@
 
 pipeline{
   environment {
-    registry = "jeaggrey/joetech" //Replace with your registry 
+    registry = "jeaggrey/spring-boot-mongo" //Replace with your registry 
     registryCredential = 'DockerHubCred' //Credential name in Jenkins for Dockerhub
     dockerImage = ''
   }
@@ -24,7 +24,7 @@ pipeline{
       steps{
         sh "echo 'cloning the latest application version' "
       //  git credentialsId: 'GithubCred', url: 'https://github.com/JoetechDev/jowebapp.git' //Use your own github account link
-       git branch: 'main', credentialsId: 'GithubCred', url: 'https://github.com/JoetechDev/jowebapp'
+       git branch: 'master', credentialsId: 'GithubCred', url: 'https://github.com/jeaggrey/spring-boot-mongo-docker.git'
     //  git 'https://github.com/JoetechDev/jowebapp'
       }
     }
@@ -69,15 +69,15 @@ pipeline{
         sh "echo 'Pushed  Docker Image'"
        }
     }
- stage('8Updating Manifest') {
-       steps {
-         script {
-         echo "triggering updatemanifestjob"
-                build job: 'manifestupd', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)] 
-                // "manifestupd" name of second jenkins job that is triggered , second Job is parameterized and env.BUILD_NUMBER is inputed as parameter  DOCKERTAG  
-         }
-       }
-     }
+//  stage('8Updating Manifest') {
+//        steps {
+//          script {
+//          echo "triggering updatemanifestjob"
+//                 build job: 'manifestupd', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)] 
+//                 // "manifestupd" name of second jenkins job that is triggered , second Job is parameterized and env.BUILD_NUMBER is inputed as parameter  DOCKERTAG  
+//          }
+//        }
+//      }
 
   }
 }
